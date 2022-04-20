@@ -28,6 +28,7 @@ Route::get('login/google', 'Auth\LoginController@redirectToGoogle')->name('login
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 //Facebook Socialite login route here...
+Route::get('login/facebook',[L])
 Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook')->name('login.facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
 
