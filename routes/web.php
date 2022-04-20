@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +25,22 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //Google Socialite login route here...
-Route::get('login/google', 'Auth\LoginController@redirectToGoogle')->name('login.google');
-Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('login/google',[LoginController::class,'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback',[LoginController::class,'handleGoogleCallback']);
+
+// Route::get('login/google', 'Auth\LoginController@redirectToGoogle')->name('login.google');
+// Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 //Facebook Socialite login route here...
-Route::get('login/facebook',[L])
-Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook')->name('login.facebook');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+Route::get('login/facebook',[LoginController::class,'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback',[LoginController::class,'handleFacebookCallback']);
+
+// Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook')->name('login.facebook');
+// Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
 
 //Github Socialite login route here...
-Route::get('login/github', 'Auth\LoginController@redirectToGithub')->name('login.github');
-Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');
+Route::get('login/github',[LoginController::class,'redirectToGithub'])->name('login.github');
+Route::get('login/github/callback',[LoginController::class,'handleGithubCallback']);
+
+// Route::get('login/github', 'Auth\LoginController@redirectToGithub')->name('login.github');
+// Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');
